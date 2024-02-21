@@ -38,9 +38,10 @@
 - Path -> https://tailwindcss.com/ > Get Started > Documentation > Framework Guides > Create React App
 
   > npm install -D tailwindcss
+
   > npx tailwindcss init
 
-- tailwind.config.js
+- The init command will generate tailwind.config.js. Edit the below content
 
   ```
   content: [
