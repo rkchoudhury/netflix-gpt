@@ -10,19 +10,24 @@
 
   > npm install -D typescript@4.9.5
 
-- Installed peer dependencies
+- Installed Type Definitions for Dependencies
 
   > npm install -D @types/react @types/react-dom
 
-- Initialise typescript in the project. It will generate tsconfig.json file
+- Initialize TypeScript Configuration. It will generate tsconfig.json file
 
   > npx tsc --init
 
 - Change following compilerOptions to support react
-  -"jsx": "react"
-  -"allowJs": true
 
-- Convert App.js file to App.tsx and index.js to index.tsx
+  - "jsx": "react"
+  - "allowJs": true
+
+- Rename Files
+
+  - Convert App.js file to App.tsx and index.js to index.tsx
+
+- Update Import Statements
   - Include react in each of the tsx file
     - import React from "react";
   - In index.tsx file, add the negation
