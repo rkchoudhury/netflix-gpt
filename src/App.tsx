@@ -3,7 +3,7 @@ import React from "react";
 function App() {
   return (
     <div className="App">
-      <p>Netflix - GPT</p>
+      <h1 className="text-3xl font-bold underline">Netflix - GPT</h1>
     </div>
   );
 }

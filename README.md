@@ -18,7 +18,7 @@
 
   > npx tsc --init
 
-- Change following compilerOptions to support react
+- Change following compilerOptions in tsconfig.json file to support react
 
   - "jsx": "react"
   - "allowJs": true
@@ -32,3 +32,26 @@
     - import React from "react";
   - In index.tsx file, add the negation
     - const root = ReactDOM.createRoot(document.getElementById("root")!);
+
+### Install Tailwind CSS
+
+- Path -> https://tailwindcss.com/ > Get Started > Documentation > Framework Guides > Create React App
+
+  > npm install -D tailwindcss
+  > npx tailwindcss init
+
+- tailwind.config.js
+
+  ```
+  content: [
+      "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  ```
+
+- index.css
+
+  ```
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  ```
