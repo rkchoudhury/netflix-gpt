@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+## Commands used in set up the projects
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Create React app
 
-## Available Scripts
+> npx create-react-app netflix-gpt
 
-In the project directory, you can run:
+### Configure typescript
 
-### `npm start`
+- Latest version is not yet compatible with the react 18 version. Installed the compatibled version
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  > npm install -D typescript@4.9.5
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Installed Type Definitions for Dependencies
 
-### `npm test`
+  > npm install -D @types/react @types/react-dom
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Initialize TypeScript Configuration. It will generate tsconfig.json file
 
-### `npm run build`
+  > npx tsc --init
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Change following compilerOptions in tsconfig.json file to support react
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - "jsx": "react"
+  - "allowJs": true
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Rename Files
 
-### `npm run eject`
+  - Convert App.js file to App.tsx and index.js to index.tsx
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Update Import Statements
+  - Include react in each of the tsx file
+    - import React from "react";
+  - In index.tsx file, add the negation
+    - const root = ReactDOM.createRoot(document.getElementById("root")!);
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install Tailwind CSS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Path -> https://tailwindcss.com/ > Get Started > Documentation > Framework Guides > Create React App
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  > npm install -D tailwindcss
 
-## Learn More
+  > npx tailwindcss init
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The init command will generate tailwind.config.js. Edit the below content
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  ```
+  content: [
+      "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  ```
 
-### Code Splitting
+- index.css
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  ```
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  ```
