@@ -13,6 +13,7 @@ const LogIn = () => {
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
+    setErrorMessage("");
   };
 
   const handleButtonClick = () => {
@@ -47,7 +48,7 @@ const LogIn = () => {
             <input
               ref={email}
               placeholder="Email"
-              type="email"
+              type="text"
               className="p-2 my-4 bg-gray-700 bg-opacity-50 rounded-sm"
             />
             <input
