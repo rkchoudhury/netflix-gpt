@@ -1,9 +1,12 @@
 import React from "react";
+import { RouterProvider } from "react-router-dom";
+
+import appRouter from "./navigation/AppNavigator";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">Netflix - GPT</h1>
+      <RouterProvider router={appRouter} />
     </div>
   );
 }
