@@ -56,3 +56,7 @@
   @tailwind components;
   @tailwind utilities;
   ```
+
+### Route
+
+> npm install react-router-dom
