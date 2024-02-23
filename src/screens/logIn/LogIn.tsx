@@ -1,11 +1,17 @@
 import React, { Ref, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
-import { LOGIN_BACK_GROUND_IMAGE, NETFLIX_LOGO } from "../../utils/constants";
+import { LOGIN_BACK_GROUND_IMAGE } from "../../utils/constants";
 import { checkValidData } from "../../utils/validate";
+import { signInUser, signUpUser } from "./loginHelper";
+import Header from "../../components/Header";
 
 const LogIn = () => {
   const [isSignInForm, setIsSignInForm] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const dispatch = useDispatch();
+  const navigate: NavigateFunction = useNavigate();
 
   const email: Ref<HTMLInputElement> = useRef(null);
   const password: Ref<HTMLInputElement> = useRef(null);
@@ -17,17 +23,32 @@ const LogIn = () => {
   };
 
   const handleButtonClick = () => {
-    const message = checkValidData(
-      email?.current?.value as string,
-      password?.current?.value as string,
-      name?.current?.value as string
-    );
+    const emailText = email?.current?.value as string;
+    const passwordText = password?.current?.value as string;
+    const nameText = name?.current?.value as string;
+
+    const message = checkValidData(emailText, passwordText, nameText);
     setErrorMessage(message);
+
+    if (message) return;
+
+    if (isSignInForm) {
+      signUpUser(
+        emailText,
+        passwordText,
+        nameText,
+        setErrorMessage,
+        dispatch,
+        navigate
+      );
+    } else {
+      signInUser(emailText, passwordText, setErrorMessage, navigate);
+    }
   };
 
   return (
     <div>
-      <img src={NETFLIX_LOGO} alt="logo" className="absolute w-44" />
+      <Header />
       <div className="absolute bg-black py-12 w-3/12 mx-auto right-0 left-0 my-36 rounded-sm bg-opacity-75">
         <div className="w-3/5 mx-auto right-0 left-0">
           <h1 className="text-white font-bold text-3xl mb-4">
