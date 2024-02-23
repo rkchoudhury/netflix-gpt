@@ -5,15 +5,21 @@ import {
   updateUserProfile,
 } from "../../services/authenticationService";
 import { updateUserInfo } from "../../redux/slices/userSlice";
+import { NavigateFunction } from "react-router-dom";
+import { ROUTE_NAMES } from "../../navigation/Routes";
 
 const signInUser = async (
   email: string,
   password: string,
-  setErrorMessage: (message: string) => void
+  setErrorMessage: (message: string) => void,
+  navigate: NavigateFunction
 ) => {
   authenticateUser(email, password)
     .then((userDetails) => {
-      return userDetails;
+      if (userDetails) {
+        navigate(ROUTE_NAMES.BROWSE);
+      }
+      // return userDetails;
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -27,7 +33,8 @@ const signUpUser = async (
   password: string,
   name: string,
   setErrorMessage: (message: string) => void,
-  dispatch: (value: Action) => void
+  dispatch: (value: Action) => void,
+  navigate: NavigateFunction
 ) => {
   try {
     const userDetails = await createUser(email, password);
@@ -35,7 +42,10 @@ const signUpUser = async (
     if (response) {
       dispatch(updateUserInfo({ name }));
     }
-    return userDetails;
+    if (userDetails) {
+      navigate(ROUTE_NAMES.BROWSE);
+    }
+    // return userDetails;
   } catch (error: any) {
     const errorCode = error.code;
     const errorMessage = getErrorMessage(errorCode);
