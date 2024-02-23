@@ -5,6 +5,7 @@ import { NavigateFunction, useNavigate } from "react-router-dom";
 import { LOGIN_BACK_GROUND_IMAGE, NETFLIX_LOGO } from "../../utils/constants";
 import { checkValidData } from "../../utils/validate";
 import { signInUser, signUpUser } from "./loginHelper";
+import Header from "../../components/Header";
 
 const LogIn = () => {
   const [isSignInForm, setIsSignInForm] = useState(false);
@@ -47,7 +48,7 @@ const LogIn = () => {
 
   return (
     <div>
-      <img src={NETFLIX_LOGO} alt="logo" className="absolute w-44" />
+      <Header />
       <div className="absolute bg-black py-12 w-3/12 mx-auto right-0 left-0 my-36 rounded-sm bg-opacity-75">
         <div className="w-3/5 mx-auto right-0 left-0">
           <h1 className="text-white font-bold text-3xl mb-4">

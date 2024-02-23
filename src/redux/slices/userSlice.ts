@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+import { IUserState } from "../../model/RootState";
+
+const initialState: IUserState = {
   email: "",
   photoURL: "",
   uid: "",
@@ -11,7 +13,7 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    addUser: (state, { payload }) => {
+    addUser: (state: IUserState, { payload }) => {
       return {
         ...state,
         ...payload,
@@ -22,7 +24,7 @@ const userSlice = createSlice({
         ...initialState,
       };
     },
-    updateUserInfo: (state, actions) => {
+    updateUserInfo: (state: IUserState, actions) => {
       return {
         ...state,
         displayName: actions.payload.name,

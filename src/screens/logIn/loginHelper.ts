@@ -2,6 +2,7 @@ import { Action } from "@reduxjs/toolkit";
 import {
   authenticateUser,
   createUser,
+  signOutUser,
   updateUserProfile,
 } from "../../services/authenticationService";
 import { updateUserInfo } from "../../redux/slices/userSlice";
@@ -64,4 +65,13 @@ const getErrorMessage = (errorCode: string) => {
   }
 };
 
-export { signInUser, signUpUser };
+const userSignOut = async (navigate: NavigateFunction) => {
+  try {
+    await signOutUser();
+    navigate(ROUTE_NAMES.HOME);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { signInUser, signUpUser, userSignOut };

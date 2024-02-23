@@ -2,6 +2,7 @@ import {
   User,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
   updateProfile,
 } from "firebase/auth";
 
@@ -51,4 +52,14 @@ const updateUserProfile = async (
     });
 };
 
-export { authenticateUser, createUser, updateUserProfile };
+const signOutUser = async () => {
+  return signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+export { authenticateUser, createUser, updateUserProfile, signOutUser };
