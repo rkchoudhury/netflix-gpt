@@ -158,3 +158,9 @@ To host the site with Firebase Hosting, we need the Firebase CLI
 - Authentication
 - Select Sign-in methods
 - Like Email/Password - Enable it
+
+## Redux Toolkit
+
+> npm install @reduxjs/toolkit
+
+> npm install react-redux

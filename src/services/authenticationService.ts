@@ -1,9 +1,13 @@
 import {
+  User,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 
 import { auth } from "../config/firebase";
+
+// Firebase Doc: https://firebase.google.com/docs/auth/web/password-auth
 
 const createUser = async (email: string, password: string) => {
   return createUserWithEmailAndPassword(auth, email, password)
@@ -29,4 +33,22 @@ const authenticateUser = async (email: string, password: string) => {
     });
 };
 
-export { authenticateUser, createUser };
+const updateUserProfile = async (
+  user: User,
+  name: string,
+  photoURL: string
+) => {
+  return updateProfile(user, {
+    displayName: name,
+    photoURL: photoURL,
+  })
+    .then(() => {
+      // Profile updated!
+      return true;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+export { authenticateUser, createUser, updateUserProfile };

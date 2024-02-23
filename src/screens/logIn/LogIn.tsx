@@ -1,4 +1,5 @@
 import React, { Ref, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 
 import { LOGIN_BACK_GROUND_IMAGE, NETFLIX_LOGO } from "../../utils/constants";
 import { checkValidData } from "../../utils/validate";
@@ -7,6 +8,7 @@ import { signInUser, signUpUser } from "./loginHelper";
 const LogIn = () => {
   const [isSignInForm, setIsSignInForm] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const dispatch = useDispatch();
 
   const email: Ref<HTMLInputElement> = useRef(null);
   const password: Ref<HTMLInputElement> = useRef(null);
@@ -28,7 +30,7 @@ const LogIn = () => {
     if (message) return;
 
     if (isSignInForm) {
-      signUpUser(emailText, passwordText, setErrorMessage);
+      signUpUser(emailText, passwordText, nameText, setErrorMessage, dispatch);
     } else {
       signInUser(emailText, passwordText, setErrorMessage);
     }

@@ -1,7 +1,10 @@
+import { Action } from "@reduxjs/toolkit";
 import {
   authenticateUser,
   createUser,
+  updateUserProfile,
 } from "../../services/authenticationService";
+import { updateUserInfo } from "../../redux/slices/userSlice";
 
 const signInUser = async (
   email: string,
@@ -22,10 +25,16 @@ const signInUser = async (
 const signUpUser = async (
   email: string,
   password: string,
-  setErrorMessage: (message: string) => void
+  name: string,
+  setErrorMessage: (message: string) => void,
+  dispatch: (value: Action) => void
 ) => {
   try {
     const userDetails = await createUser(email, password);
+    const response = await updateUserProfile(userDetails, name, "");
+    if (response) {
+      dispatch(updateUserInfo({ name }));
+    }
     return userDetails;
   } catch (error: any) {
     const errorCode = error.code;
