@@ -2,7 +2,7 @@ import React, { Ref, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
-import { LOGIN_BACK_GROUND_IMAGE, NETFLIX_LOGO } from "../../utils/constants";
+import { LOGIN_BACK_GROUND_IMAGE } from "../../utils/constants";
 import { checkValidData } from "../../utils/validate";
 import { signInUser, signUpUser } from "./loginHelper";
 import Header from "../../components/Header";

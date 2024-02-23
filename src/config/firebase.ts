@@ -21,6 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
+// Keeping the auth here so that it can be reffered in multiple places
 const auth = getAuth();
 
 export { auth };

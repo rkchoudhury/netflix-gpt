@@ -11,15 +11,17 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // This is an event listener given by Firebase
-    // This willbe called whenever there is an auth change.
-    // This will be called when user signIn, signUp or signOut
+    /**
+     * This is an event listener given by Firebase.
+     * This will be called whenever there is an auth change. This will be called when user signIn, signUp or signOut
+     * By this we don't have to handle of user data in different places. It can be handled in a central place like this
+     *
+     * https://firebase.google.com/docs/reference/js/auth.user
+     */
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/auth.user
+        // User is signed in
         const { email, photoURL, uid, displayName } = user;
-        console.log("rkkkkk user", user);
         dispatch(addUser({ email, photoURL, uid, displayName }));
       } else {
         // User is signed out
