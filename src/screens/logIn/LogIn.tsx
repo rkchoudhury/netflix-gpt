@@ -2,6 +2,7 @@ import React, { Ref, useRef, useState } from "react";
 
 import { LOGIN_BACK_GROUND_IMAGE, NETFLIX_LOGO } from "../../utils/constants";
 import { checkValidData } from "../../utils/validate";
+import { signInUser, signUpUser } from "./loginHelper";
 
 const LogIn = () => {
   const [isSignInForm, setIsSignInForm] = useState(false);
@@ -17,12 +18,20 @@ const LogIn = () => {
   };
 
   const handleButtonClick = () => {
-    const message = checkValidData(
-      email?.current?.value as string,
-      password?.current?.value as string,
-      name?.current?.value as string
-    );
+    const emailText = email?.current?.value as string;
+    const passwordText = password?.current?.value as string;
+    const nameText = name?.current?.value as string;
+
+    const message = checkValidData(emailText, passwordText, nameText);
     setErrorMessage(message);
+
+    if (message) return;
+
+    if (isSignInForm) {
+      signUpUser(emailText, passwordText, setErrorMessage);
+    } else {
+      signInUser(emailText, passwordText, setErrorMessage);
+    }
   };
 
   return (

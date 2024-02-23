@@ -148,3 +148,13 @@ To host the site with Firebase Hosting, we need the Firebase CLI
   > firebase deploy
   - Project Console: https://console.firebase.google.com/project/netflixgpt-c1dd2/overview
   - Hosting URL: https://netflixgpt-c1dd2.web.app
+
+## Authentication
+
+### Enable Authentication from Firebase
+
+- Go to the site: https://console.firebase.google.com/
+- Select the project -> NetflixGPT
+- Authentication
+- Select Sign-in methods
+- Like Email/Password - Enable it
