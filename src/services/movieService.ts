@@ -13,4 +13,17 @@ const nowPlayingMovieService = async () => {
   }
 };
 
-export { nowPlayingMovieService };
+const movieVideoService = async (movieId: number) => {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`,
+      GET_API_OPTIONS
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log("Unable to fetch movieVideo");
+  }
+};
+
+export { nowPlayingMovieService, movieVideoService };

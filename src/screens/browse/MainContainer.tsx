@@ -13,12 +13,12 @@ const MainContainer = () => {
   if (movies?.length === 0) return null;
 
   const mainMovie = movies?.[0];
-  const { title, overview } = mainMovie;
+  const { title, overview, id } = mainMovie;
 
   return (
     <div>
       <VideoTitle title={title} overview={overview} />
-      <VideoBackground />
+      <VideoBackground movieId={id} />
     </div>
   );
 };

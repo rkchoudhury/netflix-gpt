@@ -1,3 +1,5 @@
+import { IMovie, IMovieVideo } from "./movieModel";
+
 interface IRootState {
   user: IUserState;
   movies: IMoviesState;
@@ -11,7 +13,8 @@ interface IUserState {
 }
 
 interface IMoviesState {
-  nowPlayingMovie: any[];
+  nowPlayingMovie: IMovie[];
+  movieTrailer: IMovieVideo;
 }
 
 export { IRootState, IUserState, IMoviesState };
