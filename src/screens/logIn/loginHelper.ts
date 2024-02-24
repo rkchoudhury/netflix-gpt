@@ -6,21 +6,15 @@ import {
   updateUserProfile,
 } from "../../services/authenticationService";
 import { updateUserInfo } from "../../redux/slices/userSlice";
-import { NavigateFunction } from "react-router-dom";
-import { ROUTE_NAMES } from "../../navigation/Routes";
 
 const signInUser = async (
   email: string,
   password: string,
-  setErrorMessage: (message: string) => void,
-  navigate: NavigateFunction
+  setErrorMessage: (message: string) => void
 ) => {
   authenticateUser(email, password)
     .then((userDetails) => {
-      if (userDetails) {
-        navigate(ROUTE_NAMES.BROWSE);
-      }
-      // return userDetails;
+      return userDetails;
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -34,8 +28,7 @@ const signUpUser = async (
   password: string,
   name: string,
   setErrorMessage: (message: string) => void,
-  dispatch: (value: Action) => void,
-  navigate: NavigateFunction
+  dispatch: (value: Action) => void
 ) => {
   try {
     const userDetails = await createUser(email, password);
@@ -43,10 +36,7 @@ const signUpUser = async (
     if (response) {
       dispatch(updateUserInfo({ name }));
     }
-    if (userDetails) {
-      navigate(ROUTE_NAMES.BROWSE);
-    }
-    // return userDetails;
+    return userDetails;
   } catch (error: any) {
     const errorCode = error.code;
     const errorMessage = getErrorMessage(errorCode);
@@ -65,10 +55,9 @@ const getErrorMessage = (errorCode: string) => {
   }
 };
 
-const userSignOut = async (navigate: NavigateFunction) => {
+const userSignOut = async () => {
   try {
     await signOutUser();
-    navigate(ROUTE_NAMES.HOME);
   } catch (error) {
     console.log(error);
   }
