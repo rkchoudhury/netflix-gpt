@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import Header from "../../components/Header";
 import { IRootState } from "../../model/RootState";
 import { useNowPlayingMovies } from "../../hooks/useNowPlayingMovies";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./SecondaryContainer";
 
 const Browse = () => {
   const { uid } = useSelector((state: IRootState) => state.user);
@@ -13,7 +15,8 @@ const Browse = () => {
   return (
     <div>
       <Header showSignOut={!!uid} />
-      <p>Browse</p>
+      <MainContainer />
+      <SecondaryContainer />
     </div>
   );
 };

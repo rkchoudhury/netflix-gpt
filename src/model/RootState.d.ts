@@ -1,5 +1,6 @@
 interface IRootState {
   user: IUserState;
+  movies: IMoviesState;
 }
 
 interface IUserState {
@@ -9,4 +10,8 @@ interface IUserState {
   displayName: string;
 }
 
-export { IRootState, IUserState };
+interface IMoviesState {
+  nowPlayingMovie: any[];
+}
+
+export { IRootState, IUserState, IMoviesState };
