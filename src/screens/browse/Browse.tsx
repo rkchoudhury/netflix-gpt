@@ -3,12 +3,12 @@ import { useSelector } from "react-redux";
 
 import Header from "../../components/Header";
 import { IRootState } from "../../model/RootState";
-import { useNowPlayingMovie } from "../../hooks/useNowPlayingMovie";
+import { useNowPlayingMovies } from "../../hooks/useNowPlayingMovies";
 
 const Browse = () => {
   const { uid } = useSelector((state: IRootState) => state.user);
 
-  useNowPlayingMovie();
+  useNowPlayingMovies();
 
   return (
     <div>
