@@ -10,7 +10,6 @@ export const useNowPlayingMovies = () => {
   const getNowPlayingMovies = async () => {
     const nowPlayingMovie = await nowPlayingMovieService();
     dispatch(saveNowPlayingMovie(nowPlayingMovie?.results ?? []));
-    console.log(nowPlayingMovie?.results);
   };
 
   useEffect(() => {
