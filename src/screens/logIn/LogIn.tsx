@@ -1,17 +1,15 @@
 import React, { Ref, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { NavigateFunction, useNavigate } from "react-router-dom";
 
-import { LOGIN_BACK_GROUND_IMAGE } from "../../utils/constants";
 import { checkValidData } from "../../utils/validate";
 import { signInUser, signUpUser } from "./loginHelper";
 import Header from "../../components/Header";
+import { NETFLIX_BACKGROUND } from "../../asserts";
 
 const LogIn = () => {
   const [isSignInForm, setIsSignInForm] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const dispatch = useDispatch();
-  const navigate: NavigateFunction = useNavigate();
 
   const email: Ref<HTMLInputElement> = useRef(null);
   const password: Ref<HTMLInputElement> = useRef(null);
@@ -33,16 +31,9 @@ const LogIn = () => {
     if (message) return;
 
     if (isSignInForm) {
-      signUpUser(
-        emailText,
-        passwordText,
-        nameText,
-        setErrorMessage,
-        dispatch,
-        navigate
-      );
+      signUpUser(emailText, passwordText, nameText, setErrorMessage, dispatch);
     } else {
-      signInUser(emailText, passwordText, setErrorMessage, navigate);
+      signInUser(emailText, passwordText, setErrorMessage);
     }
   };
 
@@ -99,7 +90,7 @@ const LogIn = () => {
           </form>
         </div>
       </div>
-      <img src={LOGIN_BACK_GROUND_IMAGE} alt="login_image" />
+      <img src={NETFLIX_BACKGROUND} alt="login_image" />
     </div>
   );
 };
