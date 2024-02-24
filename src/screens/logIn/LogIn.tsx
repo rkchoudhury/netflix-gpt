@@ -1,10 +1,10 @@
 import React, { Ref, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { LOGIN_BACK_GROUND_IMAGE } from "../../utils/constants";
 import { checkValidData } from "../../utils/validate";
 import { signInUser, signUpUser } from "./loginHelper";
 import Header from "../../components/Header";
+import { NETFLIX_BACKGROUND } from "../../asserts";
 
 const LogIn = () => {
   const [isSignInForm, setIsSignInForm] = useState(false);
@@ -90,7 +90,7 @@ const LogIn = () => {
           </form>
         </div>
       </div>
-      <img src={LOGIN_BACK_GROUND_IMAGE} alt="login_image" />
+      <img src={NETFLIX_BACKGROUND} alt="login_image" />
     </div>
   );
 };

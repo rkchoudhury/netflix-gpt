@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Unsubscribe, onAuthStateChanged } from "firebase/auth";
 
-import { NETFLIX_LOGO, USER_AVATAR } from "../utils/constants";
+import { USER_AVATAR } from "../utils/constants";
 import { userSignOut } from "../screens/logIn/loginHelper";
 import { addUser, removeUser } from "../redux/slices/userSlice";
 import { auth } from "../config/firebase";
 import { ROUTE_NAMES } from "../navigation/Routes";
+import { NETFLIX_LOGO } from "../asserts/";
 
 interface IProps {
   showSignOut?: boolean;
