@@ -24,6 +24,7 @@ const Header = (props: IProps) => {
   const dispatch = useDispatch();
 
   const { showGptSearch } = useSelector((state: IRootState) => state.gpt);
+  const { lang } = useSelector((state: IRootState) => state.config);
 
   useEffect(() => {
     /**
@@ -76,6 +77,7 @@ const Header = (props: IProps) => {
             <select
               className="py-1 px-2 rounded-lg bg-gray-900 text-white"
               onChange={handleLanguageChange}
+              value={lang}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
                 <option value={lang.identifier}>{lang.name}</option>

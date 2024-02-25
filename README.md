@@ -61,10 +61,6 @@
 
 > npm install react-router-dom
 
-### TODO
-
-- https://formik.org/
-
 ## Firebase
 
 For Authentication, Firebase is being used in this project
@@ -173,3 +169,8 @@ To host the site with Firebase Hosting, we need the Firebase CLI
 ### Embed YouTube video
 
 - Played Embed YouTube video
+
+## TODO - Need to Expolre
+
+- https://formik.org/
+- zustand(Redux Alternative): https://zustand-demo.pmnd.rs/
