@@ -164,3 +164,12 @@ To host the site with Firebase Hosting, we need the Firebase CLI
 > npm install @reduxjs/toolkit
 
 > npm install react-redux
+
+## TMDB
+
+- Used TMDB for fetching the movies
+- Link: https://developer.themoviedb.org/reference/intro/getting-started
+
+### Embed YouTube video
+
+- Played Embed YouTube video

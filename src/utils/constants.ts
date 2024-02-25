@@ -7,4 +7,11 @@ const NETFLIX_LOGO_URL =
 const USER_AVATAR_URL =
   "https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdpkabKqQAxyWzo6QW_ZnPz1IZLqlmNfK-t4L1VIeV1DY00JhLo_LMVFp936keDxj-V5UELAVJrU--iUUY2MaDxQSSO-0qw.png?r=e6e";
 
-export { LOGIN_BACK_GROUND_IMAGE_URL, NETFLIX_LOGO_URL, USER_AVATAR_URL };
+const CDN_IMAGE_URL = "https://image.tmdb.org/t/p/w500/";
+
+export {
+  LOGIN_BACK_GROUND_IMAGE_URL,
+  NETFLIX_LOGO_URL,
+  USER_AVATAR_URL,
+  CDN_IMAGE_URL,
+};

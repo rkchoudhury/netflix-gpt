@@ -1,5 +1,8 @@
+import { IMovie, IMovieVideo } from "./movieModel";
+
 interface IRootState {
   user: IUserState;
+  movies: IMoviesState;
 }
 
 interface IUserState {
@@ -9,4 +12,12 @@ interface IUserState {
   displayName: string;
 }
 
-export { IRootState, IUserState };
+interface IMoviesState {
+  nowPlayingMovie: IMovie[];
+  popularMovies: IMovie[];
+  topRatedMovies: IMovie[];
+  upcomingMovies: IMovie[];
+  movieTrailer: IMovieVideo;
+}
+
+export { IRootState, IUserState, IMoviesState };
