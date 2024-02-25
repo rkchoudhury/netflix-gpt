@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { movieService } from "../services/movieService";
@@ -8,12 +8,12 @@ import { MOVIE_TYPE } from "../enums/movieTypeEnum";
 export const useNowPlayingMovies = () => {
   const dispatch = useDispatch();
 
-  const getNowPlayingMovies = async () => {
+  const getNowPlayingMovies = useCallback(async () => {
     const nowPlayingMovie = await movieService(MOVIE_TYPE.NOW_PLAYING);
     dispatch(saveNowPlayingMovie(nowPlayingMovie?.results ?? []));
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     getNowPlayingMovies();
-  }, []);
+  }, [getNowPlayingMovies]);
 };

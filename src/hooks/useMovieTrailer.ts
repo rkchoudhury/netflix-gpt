@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { movieVideoService } from "../services/movieService";
@@ -9,15 +9,15 @@ import { VIDEO_TYPE_ENUM } from "../enums/videoTypeEnum";
 export const useMovieTrailer = (movieId: number) => {
   const dispatch = useDispatch();
 
-  const getMovieVideos = async () => {
+  const getMovieVideos = useCallback(async () => {
     const videos = await movieVideoService(movieId);
     const trailer = getMovieTrailer(videos.results);
     dispatch(saveMovieTrailer(trailer));
-  };
+  }, [movieId, dispatch]);
 
   useEffect(() => {
     getMovieVideos();
-  }, []);
+  }, [getMovieVideos]);
 };
 
 const getMovieTrailer = (videos: IMovieVideo[]): IMovieVideo => {
