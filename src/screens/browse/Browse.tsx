@@ -9,7 +9,7 @@ import SecondaryContainer from "./SecondaryContainer";
 import { usePopularMovies } from "../../hooks/usePopularMovies";
 import { useTopRatedMovies } from "../../hooks/useTopRatedMovies";
 import { useUpcomingMovies } from "../../hooks/useUpcomingMovies";
-import GptSearch from "../../components/GptSearch";
+import GptSearch from "../gpt/GptSearch";
 
 const Browse = () => {
   const { uid } = useSelector((state: IRootState) => state.user);
