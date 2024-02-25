@@ -9,9 +9,16 @@ const USER_AVATAR_URL =
 
 const CDN_IMAGE_URL = "https://image.tmdb.org/t/p/w500/";
 
+const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hindi", name: "Hindi" },
+  { identifier: "odia", name: "Odia" },
+];
+
 export {
   BACK_GROUND_IMAGE_URL,
   NETFLIX_LOGO_URL,
   USER_AVATAR_URL,
   CDN_IMAGE_URL,
+  SUPPORTED_LANGUAGES,
 };
