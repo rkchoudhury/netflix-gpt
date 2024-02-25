@@ -14,6 +14,9 @@ interface IUserState {
 
 interface IMoviesState {
   nowPlayingMovie: IMovie[];
+  popularMovies: IMovie[];
+  topRatedMovies: IMovie[];
+  upcomingMovies: IMovie[];
   movieTrailer: IMovieVideo;
 }
 

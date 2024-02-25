@@ -5,21 +5,23 @@ import MovieList from "../../components/MovieList";
 import { IRootState } from "../../model/RootState";
 
 const SecondaryContainer = () => {
-  const { nowPlayingMovie } = useSelector((state: IRootState) => state.movies);
+  const { nowPlayingMovie, popularMovies, topRatedMovies, upcomingMovies } =
+    useSelector((state: IRootState) => state.movies);
+
   return (
     <div className="bg-black">
       <div className="-mt-52 relative z-20">
         {nowPlayingMovie?.length && (
           <MovieList title={"Now Playing"} movies={nowPlayingMovie} />
         )}
-        {nowPlayingMovie?.length && (
-          <MovieList title={"Now Playing"} movies={nowPlayingMovie} />
+        {popularMovies?.length && (
+          <MovieList title={"Popular"} movies={popularMovies} />
         )}
-        {nowPlayingMovie?.length && (
-          <MovieList title={"Now Playing"} movies={nowPlayingMovie} />
+        {topRatedMovies?.length && (
+          <MovieList title={"Top Rated"} movies={topRatedMovies} />
         )}
-        {nowPlayingMovie?.length && (
-          <MovieList title={"Now Playing"} movies={nowPlayingMovie} />
+        {upcomingMovies?.length && (
+          <MovieList title={"Upcoming"} movies={upcomingMovies} />
         )}
       </div>
     </div>
