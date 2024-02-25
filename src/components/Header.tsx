@@ -8,6 +8,7 @@ import { addUser, removeUser } from "../redux/slices/userSlice";
 import { auth } from "../config/firebase";
 import { ROUTE_NAMES } from "../navigation/Routes";
 import { NETFLIX_LOGO, USER_AVATAR } from "../asserts";
+import { toggleGptSearchView } from "../redux/slices/gptSlice";
 
 interface IProps {
   showSignOut?: boolean;
@@ -51,6 +52,10 @@ const Header = (props: IProps) => {
     userSignOut();
   };
 
+  const handleToggleGptView = () => {
+    dispatch(toggleGptSearchView());
+  };
+
   return (
     <div className="absolute w-full flex justify-between items-center bg-gradient-to-b from-black z-10">
       <div>
@@ -58,6 +63,12 @@ const Header = (props: IProps) => {
       </div>
       {showSignOut && (
         <div className="flex">
+          <button
+            onClick={handleToggleGptView}
+            className="text-white font-semibold bg-amber-600 p-2 rounded-lg mx-6"
+          >
+            GPT Search
+          </button>
           <img src={USER_AVATAR} alt="logo" className="w-10 h-10 rounded-2xl" />
           <button
             onClick={handleSigOut}

@@ -3,6 +3,7 @@ import { IMovie, IMovieVideo } from "./movieModel";
 interface IRootState {
   user: IUserState;
   movies: IMoviesState;
+  gpt: IGptState;
 }
 
 interface IUserState {
@@ -20,4 +21,8 @@ interface IMoviesState {
   movieTrailer: IMovieVideo;
 }
 
-export { IRootState, IUserState, IMoviesState };
+interface IGptState {
+  showGptSearch: boolean;
+}
+
+export { IRootState, IUserState, IMoviesState, IGptState };
