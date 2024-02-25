@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { movieVideoService } from "../services/movieService";
 import { IMovieVideo } from "../model/movieModel";
 import { saveMovieTrailer } from "../redux/slices/moviesSlice";
+import { VIDEO_TYPE_ENUM } from "../enums/videoTypeEnum";
 
 export const useMovieTrailer = (movieId: number) => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export const useMovieTrailer = (movieId: number) => {
 
 const getMovieTrailer = (videos: IMovieVideo[]): IMovieVideo => {
   const filterData = videos?.filter(
-    (eachVideo: IMovieVideo) => eachVideo.type === "Trailer" //TODO: Here if we use VIDEO_TYPE_ENUM then it is throwing error
+    (eachVideo: IMovieVideo) => eachVideo.type === VIDEO_TYPE_ENUM.TRAILER
   );
   return filterData?.[0] ?? videos?.[0];
 };

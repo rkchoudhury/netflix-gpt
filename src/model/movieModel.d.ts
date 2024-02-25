@@ -17,13 +17,6 @@ interface IMovie {
 
 type VIDEO_TYPE = "Trailer" | "Teaser" | "Featurette" | "Clip";
 
-enum VIDEO_TYPE_ENUM {
-  TRAILER = "Trailer",
-  TEASER = "Teaser",
-  FEATURETTE = "Featurette",
-  CLIP = "Clip",
-}
-
 interface IMovieVideo {
   iso_639_1: string;
   iso_3166_1: string;
@@ -37,4 +30,4 @@ interface IMovieVideo {
   id: string;
 }
 
-export { IMovie, IMovieVideo, VIDEO_TYPE_ENUM };
+export { IMovie, IMovieVideo };

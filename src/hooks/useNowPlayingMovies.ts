@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { MOVIE_TYPE, movieService } from "../services/movieService";
+import { movieService } from "../services/movieService";
 import { saveNowPlayingMovie } from "../redux/slices/moviesSlice";
+import { MOVIE_TYPE } from "../enums/movieTypeEnum";
 
 export const useNowPlayingMovies = () => {
   const dispatch = useDispatch();

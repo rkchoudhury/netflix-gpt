@@ -1,11 +1,5 @@
 import { GET_API_OPTIONS } from "../config/apiConfig";
-
-enum MOVIE_TYPE {
-  NOW_PLAYING = "now_playing",
-  POPULAR = "popular",
-  TOP_RATED = "top_rated",
-  UPCOMING = "upcoming",
-}
+import { MOVIE_TYPE } from "../enums/movieTypeEnum";
 
 const movieService = async (movieType: MOVIE_TYPE = MOVIE_TYPE.POPULAR) => {
   try {
@@ -33,4 +27,4 @@ const movieVideoService = async (movieId: number) => {
   }
 };
 
-export { movieService, movieVideoService, MOVIE_TYPE };
+export { movieService, movieVideoService };
