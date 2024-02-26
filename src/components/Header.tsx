@@ -67,7 +67,7 @@ const Header = (props: IProps) => {
   };
 
   return (
-    <div className="md:absolute w-full flex flex-col md:flex-row md:justify-between items-center bg-black md:bg-gradient-to-b from-black z-10">
+    <div className="md:absolute w-full flex flex-col md:flex-row md:justify-between items-center bg-black md:bg-transparent md:bg-gradient-to-b from-black z-10 pb-4 md:pb-0">
       <div>
         <img src={NETFLIX_LOGO} alt="logo" className="w-44" />
       </div>
