@@ -67,7 +67,7 @@ const Header = (props: IProps) => {
   };
 
   return (
-    <div className="absolute w-full flex justify-between items-center bg-gradient-to-b from-black z-10">
+    <div className="md:absolute w-full flex flex-col md:flex-row md:justify-between items-center bg-black md:bg-gradient-to-b from-black z-10">
       <div>
         <img src={NETFLIX_LOGO} alt="logo" className="w-44" />
       </div>
@@ -90,7 +90,11 @@ const Header = (props: IProps) => {
           >
             {showGptSearch ? "Home" : "GPT Search"}
           </button>
-          <img src={USER_AVATAR} alt="logo" className="w-10 h-10 rounded-2xl" />
+          <img
+            src={USER_AVATAR}
+            alt="logo"
+            className="w-10 h-10 rounded-2xl hidden md:block"
+          />
           <button
             onClick={handleSigOut}
             className="text-white font-semibold bg-red-700 p-2 rounded-lg mx-6"
