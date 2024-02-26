@@ -40,7 +40,7 @@ const LogIn = () => {
   return (
     <div>
       <Header />
-      <div className="absolute bg-black py-12 w-3/12 mx-auto right-0 left-0 my-36 rounded-sm bg-opacity-75">
+      <div className="absolute bg-black py-12 w-11/12 md:w-3/12 mx-auto right-0 left-0 my-36 rounded-sm bg-opacity-75">
         <div className="w-3/5 mx-auto right-0 left-0">
           <h1 className="text-white font-bold text-3xl mb-4">
             {isSignInForm ? "Sign Up" : "Sign In"}
@@ -90,7 +90,11 @@ const LogIn = () => {
           </form>
         </div>
       </div>
-      <img src={NETFLIX_BACKGROUND} alt="login_image" />
+      <img
+        src={NETFLIX_BACKGROUND}
+        alt="login_image"
+        className="h-screen w-screen object-cover"
+      />
     </div>
   );
 };

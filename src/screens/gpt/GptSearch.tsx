@@ -10,7 +10,11 @@ const GptSearch = () => {
         <GptSearchBar />
       </div>
       <div className="fixed -z-10">
-        <img src={BACK_GROUND_IMAGE_URL} alt="login_image" />
+        <img
+          className="h-screen w-screen object-cover"
+          src={BACK_GROUND_IMAGE_URL}
+          alt="login_image"
+        />
       </div>
     </div>
   );

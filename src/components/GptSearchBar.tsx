@@ -9,14 +9,14 @@ const GptSearchBar = () => {
   return (
     <div className="mt-[10%] flex justify-center">
       <form
-        className="w-1/2 bg-black grid grid-cols-12"
+        className="w-full md:w-1/2 bg-black grid grid-cols-12 mx-2"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
-          className="p-4 m-4 col-span-9"
+          className="p-2 m-2 md:p-4 md:m-4 col-span-9"
           placeholder={lang[langKey].gptSearchPlaceholder}
         />
-        <button className="text-white font-semibold bg-red-700 p-4 m-4 rounded-lg col-span-3">
+        <button className="text-white font-semibold bg-red-700 p-2 m-2 md:p-4 md:m-4 rounded-lg col-span-3">
           {lang[langKey].search}
         </button>
       </form>
