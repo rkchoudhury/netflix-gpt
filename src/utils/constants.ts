@@ -1,4 +1,4 @@
-const LOGIN_BACK_GROUND_IMAGE_URL =
+const BACK_GROUND_IMAGE_URL =
   "https://assets.nflxext.com/ffe/siteui/vlv3/2e07bc25-8b8f-4531-8e1f-7e5e33938793/e4b3c14a-684b-4fc4-b14f-2b486a4e9f4e/IN-en-20240219-popsignuptwoweeks-perspective_alpha_website_large.jpg";
 
 const NETFLIX_LOGO_URL =
@@ -9,9 +9,16 @@ const USER_AVATAR_URL =
 
 const CDN_IMAGE_URL = "https://image.tmdb.org/t/p/w500/";
 
+const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hindi", name: "Hindi" },
+  { identifier: "odia", name: "Odia" },
+];
+
 export {
-  LOGIN_BACK_GROUND_IMAGE_URL,
+  BACK_GROUND_IMAGE_URL,
   NETFLIX_LOGO_URL,
   USER_AVATAR_URL,
   CDN_IMAGE_URL,
+  SUPPORTED_LANGUAGES,
 };

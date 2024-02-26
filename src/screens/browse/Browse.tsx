@@ -9,9 +9,11 @@ import SecondaryContainer from "./SecondaryContainer";
 import { usePopularMovies } from "../../hooks/usePopularMovies";
 import { useTopRatedMovies } from "../../hooks/useTopRatedMovies";
 import { useUpcomingMovies } from "../../hooks/useUpcomingMovies";
+import GptSearch from "../gpt/GptSearch";
 
 const Browse = () => {
   const { uid } = useSelector((state: IRootState) => state.user);
+  const { showGptSearch } = useSelector((state: IRootState) => state.gpt);
 
   useNowPlayingMovies();
   usePopularMovies();
@@ -21,8 +23,14 @@ const Browse = () => {
   return (
     <div>
       <Header showSignOut={!!uid} />
-      <MainContainer />
-      <SecondaryContainer />
+      {showGptSearch ? (
+        <GptSearch />
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 };

@@ -1,8 +1,11 @@
 import { IMovie, IMovieVideo } from "./movieModel";
+import { LanguageEnum } from "../enums/languageEnum";
 
 interface IRootState {
   user: IUserState;
   movies: IMoviesState;
+  gpt: IGptState;
+  config: IConfigState;
 }
 
 interface IUserState {
@@ -20,4 +23,12 @@ interface IMoviesState {
   movieTrailer: IMovieVideo;
 }
 
-export { IRootState, IUserState, IMoviesState };
+interface IGptState {
+  showGptSearch: boolean;
+}
+
+interface IConfigState {
+  lang: LanguageEnum;
+}
+
+export { IRootState, IUserState, IMoviesState, IGptState, IConfigState };
