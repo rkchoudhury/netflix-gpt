@@ -1,3 +1,7 @@
+# Netflix GPT
+
+- Hosted at: https://netflixgpt-c1dd2.web.app
+
 ## Commands used in set up the projects
 
 ### Create React app
@@ -169,6 +173,16 @@ To host the site with Firebase Hosting, we need the Firebase CLI
 ### Embed YouTube video
 
 - Played Embed YouTube video
+
+## Setting up .env file
+
+- Store all the keys or confidential info here
+- Never push the confidential info to git. Add it to .gitignore file
+- Add the value like below, the name should be start with `REACT_APP_`
+  > const REACT_APP_TMDB_KEY = "key-info"
+- We can access the value in side the project like below,
+  > process.env.REACT_APP_TMDB_KEY
+- During deployment we have to set up the env in side the server machine like Firebase (paid service)
 
 ## TODO - Need to Expolre
 
