@@ -1,13 +1,15 @@
 import { useCallback, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { movieVideoService } from "../services/movieService";
 import { IMovieVideo } from "../model/movieModel";
 import { saveMovieTrailer } from "../redux/slices/moviesSlice";
 import { VIDEO_TYPE_ENUM } from "../enums/videoTypeEnum";
+import { IRootState } from "../model/RootState";
 
 export const useMovieTrailer = (movieId: number) => {
   const dispatch = useDispatch();
+  const { movieTrailer } = useSelector((state: IRootState) => state.movies);
 
   const getMovieVideos = useCallback(async () => {
     const videos = await movieVideoService(movieId);
@@ -16,8 +18,8 @@ export const useMovieTrailer = (movieId: number) => {
   }, [movieId, dispatch]);
 
   useEffect(() => {
-    getMovieVideos();
-  }, [getMovieVideos]);
+    !movieTrailer.id && getMovieVideos();
+  }, [getMovieVideos, movieTrailer]);
 };
 
 const getMovieTrailer = (videos: IMovieVideo[]): IMovieVideo => {

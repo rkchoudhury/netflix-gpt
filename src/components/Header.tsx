@@ -8,7 +8,10 @@ import { addUser, removeUser } from "../redux/slices/userSlice";
 import { auth } from "../config/firebase";
 import { ROUTE_NAMES } from "../navigation/Routes";
 import { NETFLIX_LOGO, USER_AVATAR } from "../asserts";
-import { toggleGptSearchView } from "../redux/slices/gptSlice";
+import {
+  clearSearchedMovies,
+  toggleGptSearchView,
+} from "../redux/slices/gptSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { changeLanguage } from "../redux/slices/configSlice";
 import { IRootState } from "../model/RootState";
@@ -60,6 +63,7 @@ const Header = (props: IProps) => {
 
   const handleToggleGptView = () => {
     dispatch(toggleGptSearchView());
+    dispatch(clearSearchedMovies());
   };
 
   const handleLanguageChange = (e: any) => {

@@ -17,11 +17,15 @@ const gptSlice = createSlice({
     saveSearchedMovies: (state: IGptState, action) => {
       state.searchedMovies = action.payload;
     },
+    clearSearchedMovies: (state: IGptState) => {
+      state.searchedMovies = [];
+    },
   },
 });
 
 const { actions, reducer } = gptSlice;
 
-export const { toggleGptSearchView, saveSearchedMovies } = actions;
+export const { toggleGptSearchView, saveSearchedMovies, clearSearchedMovies } =
+  actions;
 
 export default reducer;
