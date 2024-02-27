@@ -27,4 +27,17 @@ const movieVideoService = async (movieId: number) => {
   }
 };
 
-export { movieService, movieVideoService };
+const movieSearchService = async (movieName: string) => {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/movie?query=${movieName}&include_adult=false&language=en-US&page=1`,
+      GET_API_OPTIONS
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log("Unable to fetch movieSearchService");
+  }
+};
+
+export { movieService, movieVideoService, movieSearchService };
