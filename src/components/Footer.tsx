@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import packageJson from "../../package.json";
+
 import { CODE_ICON, GITHUB_ICON, LINKEDIN_ICON } from "../asserts";
 
 const Footer = () => {
+  const appVersion = packageJson.version;
+
   return (
     <div className="p-4 bottom-0 left-0 absolute w-full text-white bg-gradient-to-tr from-black flex justify-between items-center">
-      <p className="text-sm font-bold">v1.0.1</p>
+      <p className="text-sm font-bold">{`v${appVersion}`}</p>
       <div className="flex">
         <Link to={"https://www.linkedin.com/in/rakchoudhury/"}>
           <img
