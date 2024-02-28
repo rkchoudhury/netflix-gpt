@@ -1,6 +1,6 @@
 {
   "name": "netflix-gpt",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
