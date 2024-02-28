@@ -3,6 +3,7 @@ import { useNavigate, useRouteError } from "react-router-dom";
 
 import { NETFLIX_LOGO } from "../../asserts";
 import { ROUTE_NAMES } from "../../navigation/Routes";
+import Footer from "../../components/Footer";
 
 const Error = () => {
   const error: any = useRouteError();
@@ -28,6 +29,7 @@ const Error = () => {
             Go to Home
           </button>
         </div>
+        <Footer />
       </div>
     </div>
   );

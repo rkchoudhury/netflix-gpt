@@ -184,7 +184,7 @@ To host the site with Firebase Hosting, we need the Firebase CLI
   > process.env.REACT_APP_TMDB_KEY
 - During deployment we have to set up the env in side the server machine like Firebase (paid service)
 
-## TODO - Need to Expolre
+## TODO - Need to Explore
 
 - https://formik.org/
 - zustand(Redux Alternative): https://zustand-demo.pmnd.rs/
