@@ -1,42 +1,27 @@
-import React, { Ref, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 import { lang } from "../utils/languageConstants";
 import { IRootState } from "../model/RootState";
-import { movieSearchService } from "../services/movieService";
-import { saveSearchedMovies } from "../redux/slices/gptSlice";
+import { useGptSearchMovies } from "../hooks/useGptSearchMovies";
 
 const GptSearchBar = () => {
   const { lang: langKey } = useSelector((state: IRootState) => state.config);
-  const searchedText: Ref<HTMLInputElement> = useRef(null);
-  const dispatch = useDispatch();
+  const [searchedText, setSearchedText] = useState("");
 
-  const handleMovieSearch = async () => {
-    const text = searchedText?.current?.value ?? "";
-    const searchedMovies = await movieSearchService(text);
-
-    if (searchedMovies?.results?.length) {
-      dispatch(saveSearchedMovies(searchedMovies?.results));
-    }
-  };
+  useGptSearchMovies(searchedText);
 
   return (
     <div className="flex justify-center">
       <form
-        className="w-full md:w-1/2 bg-black grid grid-cols-12 mx-2"
+        className="w-full md:w-1/2 bg-black mx-2 flex border border-black hover:border-red-700"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
-          ref={searchedText}
-          className="p-2 m-2 md:p-4 md:m-4 col-span-9"
+          className="p-2 m-2 md:p-4 md:m-4 w-full cursor-pointer"
           placeholder={lang[langKey].gptSearchPlaceholder}
+          onChange={(e) => setSearchedText(e.target.value)}
         />
-        <button
-          onClick={handleMovieSearch}
-          className="text-white font-semibold bg-red-700 p-2 m-2 md:p-4 md:m-4 rounded-lg col-span-3"
-        >
-          {lang[langKey].search}
-        </button>
       </form>
     </div>
   );

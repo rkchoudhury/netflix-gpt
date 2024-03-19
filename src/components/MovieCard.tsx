@@ -13,7 +13,7 @@ const MovieCard = ({ movie }: IProps) => {
   if (!poster_path) return null;
 
   return (
-    <div className="w-36 mr-4">
+    <div className="w-36 mr-4 mb-4">
       <img src={`${CDN_IMAGE_URL}${poster_path}`} alt={title} />
     </div>
   );
