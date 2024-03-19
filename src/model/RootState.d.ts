@@ -26,6 +26,7 @@ interface IMoviesState {
 interface IGptState {
   showGptSearch: boolean;
   searchedMovies: IMovie[];
+  showNoResultsMessage: boolean;
 }
 
 interface IConfigState {

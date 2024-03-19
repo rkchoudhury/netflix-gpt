@@ -2,12 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import GptSearchBar from "../../components/GptSearchBar";
+import GptSearchMovies from "../../components/GptSearchMovies";
 import { BACK_GROUND_IMAGE_URL } from "../../utils/constants";
 import { IRootState } from "../../model/RootState";
-import MovieList from "../../components/MovieList";
 
 const GptSearch = () => {
-  const { searchedMovies } = useSelector((state: IRootState) => state.gpt);
+  const { searchedMovies, showNoResultsMessage } = useSelector(
+    (state: IRootState) => state.gpt
+  );
 
   return (
     <div>
@@ -20,11 +22,10 @@ const GptSearch = () => {
       </div>
       <div className="pt-[10%]">
         <GptSearchBar />
-        {searchedMovies?.length && (
-          <div className="bg-gradient-to-br from-black mt-10">
-            <MovieList title={"Searched Results"} movies={searchedMovies} />
-          </div>
-        )}
+        <GptSearchMovies
+          movies={searchedMovies}
+          showMessage={showNoResultsMessage}
+        />
       </div>
     </div>
   );

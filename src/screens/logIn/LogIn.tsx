@@ -41,6 +41,11 @@ const LogIn = () => {
   return (
     <div>
       <Header />
+      <img
+        src={NETFLIX_BACKGROUND}
+        alt="login_image"
+        className="h-screen w-screen object-cover fixed"
+      />
       <div className="absolute bg-black py-12 w-11/12 md:w-3/12 mx-auto right-0 left-0 my-12 md:my-36 rounded-sm bg-opacity-75">
         <div className="w-3/5 mx-auto right-0 left-0">
           <h1 className="text-white font-bold text-3xl mb-4">
@@ -92,11 +97,6 @@ const LogIn = () => {
         </div>
       </div>
       <Footer />
-      <img
-        src={NETFLIX_BACKGROUND}
-        alt="login_image"
-        className="h-screen w-screen object-cover"
-      />
     </div>
   );
 };
