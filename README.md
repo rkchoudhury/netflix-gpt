@@ -188,3 +188,8 @@ To host the site with Firebase Hosting, we need the Firebase CLI
 
 - https://formik.org/
 - zustand(Redux Alternative): https://zustand-demo.pmnd.rs/
+
+### Search Functionality
+
+- Implemented `dobouncing` to minimize the search API call on each keystroke
+- Implemented `caching` to display the stored searched results
