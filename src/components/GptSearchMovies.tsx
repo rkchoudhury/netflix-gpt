@@ -14,7 +14,7 @@ const GptSearchMovies = ({ movies, showMessage }: IProps) => {
       <div className="bg-gradient-to-br from-black mt-10">
         {movies.length > 0 && (
           <div className="flex mx-4">
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap justify-center items-center">
               {movies.map((eachMovie: IMovie) => (
                 <MovieCard key={eachMovie.id} movie={eachMovie} />
               ))}
