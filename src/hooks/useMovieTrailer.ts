@@ -2,10 +2,9 @@ import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { movieVideoService } from "../services/movieService";
-import { IMovieVideo } from "../model/movieModel";
 import { saveMovieTrailer } from "../redux/slices/moviesSlice";
-import { VIDEO_TYPE_ENUM } from "../enums/videoTypeEnum";
 import { IRootState } from "../model/RootState";
+import { getMovieTrailer } from "../helpers/movieHelper";
 
 export const useMovieTrailer = (movieId: number) => {
   const dispatch = useDispatch();
@@ -20,11 +19,4 @@ export const useMovieTrailer = (movieId: number) => {
   useEffect(() => {
     !movieTrailer.id && getMovieVideos();
   }, [getMovieVideos, movieTrailer]);
-};
-
-const getMovieTrailer = (videos: IMovieVideo[]): IMovieVideo => {
-  const filterData = videos?.filter(
-    (eachVideo: IMovieVideo) => eachVideo.type === VIDEO_TYPE_ENUM.TRAILER
-  );
-  return filterData?.[0] ?? videos?.[0];
 };
