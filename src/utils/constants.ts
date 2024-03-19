@@ -15,7 +15,7 @@ const SUPPORTED_LANGUAGES = [
   { identifier: "odia", name: "Odia" },
 ];
 
-const DEBOUNCE_TIMMER_OFFSET = 200;
+const GPT_SEARCH_DEBOUNCE_TIME = 200;
 
 export {
   BACK_GROUND_IMAGE_URL,
@@ -23,5 +23,5 @@ export {
   USER_AVATAR_URL,
   CDN_IMAGE_URL,
   SUPPORTED_LANGUAGES,
-  DEBOUNCE_TIMMER_OFFSET,
+  GPT_SEARCH_DEBOUNCE_TIME,
 };

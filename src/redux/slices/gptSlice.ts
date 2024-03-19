@@ -6,6 +6,7 @@ const initialState: IGptState = {
   showGptSearch: false,
   searchedMovies: [],
   showNoResultsMessage: false,
+  cachedMovies: {},
 };
 
 const gptSlice = createSlice({
@@ -22,9 +23,13 @@ const gptSlice = createSlice({
     clearSearchedMovies: (state: IGptState) => {
       state.searchedMovies = [];
       state.showNoResultsMessage = false;
+      state.cachedMovies = {};
     },
     displayNoResultsMessage: (state: IGptState, action) => {
       state.showNoResultsMessage = action.payload;
+    },
+    updateCachedMovies: (state: IGptState, action) => {
+      state.cachedMovies[action.payload.searchedText] = action.payload.movies;
     },
   },
 });
@@ -36,6 +41,7 @@ export const {
   saveSearchedMovies,
   clearSearchedMovies,
   displayNoResultsMessage,
+  updateCachedMovies,
 } = actions;
 
 export default reducer;

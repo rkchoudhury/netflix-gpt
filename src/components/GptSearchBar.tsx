@@ -18,7 +18,7 @@ const GptSearchBar = () => {
         onSubmit={(e) => e.preventDefault()}
       >
         <input
-          className="p-2 m-2 md:p-4 md:m-4 w-full"
+          className="p-2 m-2 md:p-4 md:m-4 w-full cursor-pointer"
           placeholder={lang[langKey].gptSearchPlaceholder}
           onChange={(e) => setSearchedText(e.target.value)}
         />

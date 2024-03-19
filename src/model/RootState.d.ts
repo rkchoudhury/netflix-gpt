@@ -27,6 +27,7 @@ interface IGptState {
   showGptSearch: boolean;
   searchedMovies: IMovie[];
   showNoResultsMessage: boolean;
+  cachedMovies: Record<string, IMovie[]>;
 }
 
 interface IConfigState {
