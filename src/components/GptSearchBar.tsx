@@ -14,7 +14,7 @@ const GptSearchBar = () => {
   return (
     <div className="flex justify-center">
       <form
-        className="w-full md:w-1/2 bg-black mx-2 flex border border-black hover:border-red-700"
+        className="w-full md:w-1/2 bg-black flex border border-black hover:border-red-700"
         onSubmit={(e) => e.preventDefault()}
       >
         <input

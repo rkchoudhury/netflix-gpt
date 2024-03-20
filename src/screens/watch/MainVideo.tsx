@@ -19,7 +19,7 @@ const MainVideo = ({ movieDetails, playedVideoKey }: IProps) => {
     text: string | number;
   }) => {
     return (
-      <div className="my-4">
+      <div className="my-2 md:my-4">
         <span className="text-lg text-white font-semibold">{label}: </span>
         <span className="text-lg text-white">{text}</span>
       </div>
@@ -33,7 +33,7 @@ const MainVideo = ({ movieDetails, playedVideoKey }: IProps) => {
         <h1 className="text-2xl md:text-2xl font-bold text-white my-4">
           {title}
         </h1>
-        <h1 className="text-lg text-white my-4">{overview}</h1>
+        <h1 className="hidden md:block text-lg text-white my-4">{overview}</h1>
         <RowText label="Released on" text={release_date} />
         <RowText label="Average Rating" text={vote_average} />
       </div>

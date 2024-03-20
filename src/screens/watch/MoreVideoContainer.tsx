@@ -11,7 +11,7 @@ interface IProps {
 const MoreVideoContainer = ({ videos, currentVideoKey }: IProps) => {
   return (
     <div className="">
-      <div className="bg-slate-900 w-96 ml-4 p-4 h-full">
+      <div className="bg-slate-900 md:w-96 md:ml-4 p-2 md:p-4 md:h-full">
         <h2 className="text-white text-lg font-medium mb-4">All Videos</h2>
         <div className="overflow-y-scroll h-screen">
           {videos?.map((eachVideo: IMovieVideo) => (

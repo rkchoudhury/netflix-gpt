@@ -22,12 +22,12 @@ const VideoCard = ({ video, isSelctedVideo }: IProps) => {
   return (
     <div>
       <div
-        className="shadow-lg rounded-lg bg-slate-500 cursor-pointer mb-4"
+        className="shadow-lg rounded-lg bg-slate-500 cursor-pointer mb-2 md:mb-4"
         key={id}
         onClick={onPressCard}
       >
         <div
-          className={`hover:bg-red-300 rounded-lg h-32 flex justify-center items-center ${color}`}
+          className={`hover:bg-red-300 rounded-lg md:h-32 flex justify-center items-center ${color}`}
         >
           <img
             alt="play"
@@ -35,7 +35,7 @@ const VideoCard = ({ video, isSelctedVideo }: IProps) => {
             src="https://static.thenounproject.com/png/2614130-200.png"
           />
         </div>
-        <h1 className="p-2">{name}</h1>
+        <h1 className="p-1 md:p-2">{name}</h1>
       </div>
     </div>
   );
