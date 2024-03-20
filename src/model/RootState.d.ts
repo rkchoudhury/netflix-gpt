@@ -7,6 +7,7 @@ interface IRootState {
   gpt: IGptState;
   config: IConfigState;
   watch: IWatchState;
+  error: IErrorState;
 }
 
 interface IUserState {
@@ -41,6 +42,10 @@ interface IWatchState {
   nowPlayingVideoKey: string;
 }
 
+interface IErrorState {
+  isError: boolean;
+}
+
 export {
   IRootState,
   IUserState,
@@ -48,4 +53,5 @@ export {
   IGptState,
   IConfigState,
   IWatchState,
+  IErrorState,
 };

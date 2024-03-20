@@ -18,10 +18,11 @@ import { IRootState } from "../model/RootState";
 
 interface IProps {
   showSignOut?: boolean;
+  showHome?: boolean;
 }
 
 const Header = (props: IProps) => {
-  const { showSignOut } = props;
+  const { showSignOut, showHome } = props;
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -62,6 +63,9 @@ const Header = (props: IProps) => {
   };
 
   const handleToggleGptView = () => {
+    if (showHome) {
+      navigate(ROUTE_NAMES.BROWSE);
+    }
     dispatch(toggleGptSearchView());
     dispatch(clearSearchedMovies());
   };
@@ -77,7 +81,7 @@ const Header = (props: IProps) => {
       </div>
       {showSignOut && (
         <div className="flex">
-          {showGptSearch && (
+          {showGptSearch && !showHome && (
             <select
               className="py-1 px-2 rounded-lg bg-gray-900 text-white"
               onChange={handleLanguageChange}
@@ -94,7 +98,7 @@ const Header = (props: IProps) => {
             onClick={handleToggleGptView}
             className="text-white font-semibold bg-amber-600 p-2 rounded-lg mx-6"
           >
-            {showGptSearch ? "Home" : "GPT Search"}
+            {showGptSearch || showHome ? "Home" : "GPT Search"}
           </button>
           <img
             src={USER_AVATAR}

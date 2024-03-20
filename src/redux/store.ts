@@ -5,6 +5,7 @@ import moviesSlice from "./slices/moviesSlice";
 import gptSlice from "./slices/gptSlice";
 import configSlice from "./slices/configSlice";
 import watchSlice from "./slices/watchSlice";
+import errorSlice from "./slices/errorSlice";
 
 const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ const store = configureStore({
     gpt: gptSlice,
     config: configSlice,
     watch: watchSlice,
+    error: errorSlice,
   },
 });
 

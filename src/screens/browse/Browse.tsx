@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import Header from "../../components/Header";
 import { IRootState } from "../../model/RootState";
 import { useNowPlayingMovies } from "../../hooks/useNowPlayingMovies";
 import MainContainer from "./MainContainer";
@@ -12,7 +11,6 @@ import { useUpcomingMovies } from "../../hooks/useUpcomingMovies";
 import GptSearch from "../gpt/GptSearch";
 
 const Browse = () => {
-  const { uid } = useSelector((state: IRootState) => state.user);
   const { showGptSearch } = useSelector((state: IRootState) => state.gpt);
 
   useNowPlayingMovies();
@@ -22,7 +20,6 @@ const Browse = () => {
 
   return (
     <div>
-      <Header showSignOut={!!uid} />
       {showGptSearch ? (
         <GptSearch />
       ) : (

@@ -1,15 +1,19 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
-import Header from "../../components/Header";
 import VideoContainer from "./VideoContainer";
-import { ROUTE_NAMES } from "../../navigation/Routes";
+import Error from "../error/Error";
 import { clearWatchState } from "../../redux/slices/watchSlice";
+import { IRootState } from "../../model/RootState";
 
 const Watch = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
+
+  const {
+    selectedMovie: { id },
+  } = useSelector((state: IRootState) => state.watch);
 
   useEffect(() => {
     return () => {
@@ -22,9 +26,10 @@ const Watch = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  if (!id) return <Error />;
+
   return (
     <div className="bg-black w-screen">
-      <Header showSignOut={false} route={ROUTE_NAMES.WATCH} />
       <div className="flex-1 pt-[5%]">
         <VideoContainer />
         {/* <div className="bg-red-300 h-48">comments</div> */}

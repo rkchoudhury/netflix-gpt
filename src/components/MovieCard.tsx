@@ -24,7 +24,7 @@ const MovieCard = ({ movie }: IProps) => {
   };
 
   return (
-    <div className="w-36 mr-4 mb-4" onClick={handleClick}>
+    <div className="w-36 mr-4 mb-4 cursor-pointer" onClick={handleClick}>
       <img src={`${CDN_IMAGE_URL}${poster_path}`} alt={title} />
     </div>
   );

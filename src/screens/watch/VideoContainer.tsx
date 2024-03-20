@@ -16,7 +16,7 @@ const VideoContainer = () => {
 
   return (
     <div>
-      <div className="mx-8 mt-4 flex">
+      <div className="mx-8 mt-4 flex flex-col md:flex-row">
         <MainVideo
           movieDetails={selectedMovie}
           playedVideoKey={nowPlayingVideoKey}
