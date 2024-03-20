@@ -6,6 +6,8 @@ interface IRootState {
   movies: IMoviesState;
   gpt: IGptState;
   config: IConfigState;
+  watch: IWatchState;
+  error: IErrorState;
 }
 
 interface IUserState {
@@ -34,4 +36,22 @@ interface IConfigState {
   lang: LanguageEnum;
 }
 
-export { IRootState, IUserState, IMoviesState, IGptState, IConfigState };
+interface IWatchState {
+  selectedMovie: IMovie;
+  movieVideos: IMovieVideo[];
+  nowPlayingVideoKey: string;
+}
+
+interface IErrorState {
+  isError: boolean;
+}
+
+export {
+  IRootState,
+  IUserState,
+  IMoviesState,
+  IGptState,
+  IConfigState,
+  IWatchState,
+  IErrorState,
+};
