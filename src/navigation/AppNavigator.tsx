@@ -5,6 +5,8 @@ import LogIn from "../screens/logIn/LogIn";
 import Browse from "../screens/browse/Browse";
 import Error from "../screens/error/Error";
 import { ROUTE_NAMES } from "./Routes";
+import Watch from "../screens/watch/Watch";
+import AppOutlet from "./AppOutlet";
 
 const appRouter = createBrowserRouter([
   {
@@ -13,8 +15,18 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
   },
   {
-    path: ROUTE_NAMES.BROWSE,
-    element: <Browse />,
+    path: "",
+    element: <AppOutlet />,
+    children: [
+      {
+        path: ROUTE_NAMES.BROWSE,
+        element: <Browse />,
+      },
+      {
+        path: ROUTE_NAMES.WATCH,
+        element: <Watch />,
+      },
+    ],
     errorElement: <Error />,
   },
 ]);
