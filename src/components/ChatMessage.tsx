@@ -1,11 +1,7 @@
 import React from "react";
 
 import { USER_ICON } from "../asserts";
-
-interface IChatMessage {
-  name: string;
-  message: string;
-}
+import { IChatMessage } from "../model/chat";
 
 const ChatMessage = ({ name, message }: IChatMessage) => {
   return (
