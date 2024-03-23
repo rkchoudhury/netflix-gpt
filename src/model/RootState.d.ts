@@ -9,6 +9,7 @@ interface IRootState {
   config: IConfigState;
   watch: IWatchState;
   error: IErrorState;
+  chat: IChatState;
 }
 
 interface IUserState {

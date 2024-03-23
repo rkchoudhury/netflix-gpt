@@ -1,26 +1,27 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 
 import ChatMessage from "../../components/ChatMessage";
-import { useDispatch } from "react-redux";
-import { updateChatMessage } from "../../redux/slices/chatSlice";
+import { IRootState } from "../../model/RootState";
+import { IChatMessage } from "../../model/chat";
+import { useChatMessages } from "../../hooks/useChatMessages";
 
 const LiveChat = () => {
-  const dispatch = useDispatch();
+  const { messages } = useSelector((state: IRootState) => state.chat);
 
-  useEffect(() => {
-    dispatch(
-      updateChatMessage({
-        name: "Rakesh",
-        message: "Heyy",
-      })
-    );
-  }, [dispatch]);
+  useChatMessages();
 
   return (
     <div className="bg-slate-900 p-2 w-96 h-[35rem] my-10">
       <h1 className="text-lg font-bold text-white mt-2 mb-4">Live Chat:</h1>
       <div className="overflow-y-scroll h-[30rem]">
-        <ChatMessage name="Rakesh Choudhury" message="Namaste React!!" />
+        {messages.map((eachMessage: IChatMessage) => (
+          <ChatMessage
+            key={eachMessage.id}
+            name={eachMessage.name}
+            message={eachMessage.message}
+          />
+        ))}
       </div>
     </div>
   );
