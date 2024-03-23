@@ -195,3 +195,7 @@ To host the site with Firebase Hosting, we need the Firebase CLI
 
 - Implemented `dobouncing` to minimize the search API call on each keystroke
 - Implemented `caching` to display the stored searched results
+
+### n-level Nested Comments
+
+- Displayed n-level nested comments using dummy data
