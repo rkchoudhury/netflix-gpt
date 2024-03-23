@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { IChatState } from "../../model/RootState";
 import { IChatMessage } from "../../model/chat";
+import { CHAT_THRESHOLD_LIMIT } from "../../utils/constants";
 
 const initialState: IChatState = {
   messages: [],
@@ -12,7 +13,17 @@ const chatSlice = createSlice({
   initialState,
   reducers: {
     updateChatMessage: (state, { payload }: { payload: IChatMessage }) => {
-      state.messages.push(payload);
+      /**
+       * Optimization
+       * If number of chat message crosses the threshold limit then start removing the messages from the top
+       * This will never freeze the browser and our state will never bolt
+       */
+      // if (state.messages.length > CHAT_THRESHOLD_LIMIT) {
+      //   state.messages.pop();
+      // }
+      state.messages.splice(CHAT_THRESHOLD_LIMIT, 1);
+
+      state.messages.unshift(payload);
     },
     resetChat: () => {
       return initialState;
