@@ -7,6 +7,7 @@ import Error from "../error/Error";
 import { clearWatchState } from "../../redux/slices/watchSlice";
 import { IRootState } from "../../model/RootState";
 import CommentContainer from "./CommentContainer";
+import LiveChat from "./LiveChat";
 
 const Watch = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,10 @@ const Watch = () => {
     <div className="bg-black w-screen">
       <div className="flex-1 pt-[5%]">
         <VideoContainer />
-        <CommentContainer />
+        <div className="mx-8 hidden md:flex ">
+          <CommentContainer />
+          <LiveChat />
+        </div>
       </div>
     </div>
   );

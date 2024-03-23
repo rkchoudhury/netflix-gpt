@@ -5,7 +5,7 @@ import { commentsData } from "../../utils/commentConstants";
 
 const CommentContainer = () => {
   return (
-    <div className="hidden md:block mx-8 pb-8">
+    <div className="pb-8 flex-1">
       <h1 className="text-2xl font-bold text-white">Comments: </h1>
       <CommentsList comments={commentsData} />
     </div>
