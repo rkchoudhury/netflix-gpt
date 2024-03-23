@@ -1,7 +1,20 @@
 import React from "react";
 
-const ChatMessage = () => {
-  return <div>ChatMessage</div>;
+import { USER_ICON } from "../asserts";
+
+interface IChatMessage {
+  name: string;
+  message: string;
+}
+
+const ChatMessage = ({ name, message }: IChatMessage) => {
+  return (
+    <div className="flex items-center text-white bg-gray-800 p-2 rounded-2xl mb-2">
+      <img alt="profile-icon" src={USER_ICON} className="w-8" />
+      <span className="mx-2 font-bold">{name}</span>
+      <span>{message}</span>
+    </div>
+  );
 };
 
 export default ChatMessage;
