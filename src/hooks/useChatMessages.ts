@@ -14,6 +14,7 @@ export const useChatMessages = () => {
 
   useEffect(() => {
     const pollingIntervalTimmer = setInterval(() => {
+      // Here do the API call after each polling interval
       dispatch(
         updateChatMessage({
           id: generateUniqueId(),
