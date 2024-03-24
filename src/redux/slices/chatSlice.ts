@@ -21,7 +21,7 @@ const chatSlice = createSlice({
       // if (state.messages.length > CHAT_THRESHOLD_LIMIT) {
       //   state.messages.pop();
       // }
-      state.messages.splice(CHAT_THRESHOLD_LIMIT, 1);
+      state.messages.splice(CHAT_THRESHOLD_LIMIT, 1); // splice(Postion from where the message will be deleted, number of messages to be deleted)
 
       state.messages.unshift(payload);
     },

@@ -52,7 +52,7 @@ const LiveChat = () => {
           onChange={(e) => setLiveMessage(e.target.value)}
         />
         <button
-          className="bg-green-400 px-4 h-10 rounded-full"
+          className="bg-green-400 px-4 h-10 rounded-full font-semibold"
           disabled={!liveMessage.length}
         >
           Send

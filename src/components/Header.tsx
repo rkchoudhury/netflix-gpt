@@ -65,9 +65,10 @@ const Header = (props: IProps) => {
   const handleToggleGptView = () => {
     if (showHome) {
       navigate(ROUTE_NAMES.BROWSE);
+    } else {
+      dispatch(toggleGptSearchView());
+      dispatch(clearSearchedMovies());
     }
-    dispatch(toggleGptSearchView());
-    dispatch(clearSearchedMovies());
   };
 
   const handleLanguageChange = (e: any) => {
