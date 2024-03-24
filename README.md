@@ -138,14 +138,22 @@ To host the site with Firebase Hosting, we need the Firebase CLI
 
 ## App Deployment
 
+- Bump the app version
+
+- Run npm install command
+
+  > npm install
+
 - Before deployement build the project first. Check the command in package.json.
 
   > npm run build
 
   - This will create a build folder which is ready to be deployed.
 
-- Now let's deploy the app
+- Now let's deploy the app (If firebase command won't work in vscode then try to run using the command propmt by going to the project directory)
+
   > firebase deploy
+
   - Project Console: https://console.firebase.google.com/project/netflixgpt-c1dd2/overview
   - Hosting URL: https://netflixgpt-c1dd2.web.app
 
@@ -195,3 +203,12 @@ To host the site with Firebase Hosting, we need the Firebase CLI
 
 - Implemented `dobouncing` to minimize the search API call on each keystroke
 - Implemented `caching` to display the stored searched results
+
+### n-level Nested Comments
+
+- Displayed `n-level` nested comments using dummy data
+
+### Live Chat
+
+- Implemented live chat using `Long/API polling`
+- Optimize the chat messages when it reaches to a certion `limit/threshold`

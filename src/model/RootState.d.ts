@@ -1,5 +1,6 @@
 import { IMovie, IMovieVideo } from "./movieModel";
 import { LanguageEnum } from "../enums/languageEnum";
+import { IChatMessage } from "./chat";
 
 interface IRootState {
   user: IUserState;
@@ -8,6 +9,7 @@ interface IRootState {
   config: IConfigState;
   watch: IWatchState;
   error: IErrorState;
+  chat: IChatState;
 }
 
 interface IUserState {
@@ -46,6 +48,10 @@ interface IErrorState {
   isError: boolean;
 }
 
+interface IChatState {
+  messages: IChatMessage[];
+}
+
 export {
   IRootState,
   IUserState,
@@ -54,4 +60,5 @@ export {
   IConfigState,
   IWatchState,
   IErrorState,
+  IChatState,
 };
