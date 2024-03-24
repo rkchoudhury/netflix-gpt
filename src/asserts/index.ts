@@ -4,6 +4,7 @@ import USER_AVATAR from "./user_avatar.png";
 import CODE_ICON from "./code_icon.png";
 import GITHUB_ICON from "./github_icon.png";
 import LINKEDIN_ICON from "./linkedin_icon.png";
+import USER_ICON from "./user_icon.png";
 
 export {
   NETFLIX_LOGO,
@@ -12,4 +13,5 @@ export {
   CODE_ICON,
   GITHUB_ICON,
   LINKEDIN_ICON,
+  USER_ICON,
 };

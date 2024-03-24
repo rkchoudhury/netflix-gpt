@@ -15,6 +15,7 @@ import {
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { changeLanguage } from "../redux/slices/configSlice";
 import { IRootState } from "../model/RootState";
+import { resetChat } from "../redux/slices/chatSlice";
 
 interface IProps {
   showSignOut?: boolean;
@@ -65,9 +66,11 @@ const Header = (props: IProps) => {
   const handleToggleGptView = () => {
     if (showHome) {
       navigate(ROUTE_NAMES.BROWSE);
+      dispatch(resetChat());
+    } else {
+      dispatch(toggleGptSearchView());
+      dispatch(clearSearchedMovies());
     }
-    dispatch(toggleGptSearchView());
-    dispatch(clearSearchedMovies());
   };
 
   const handleLanguageChange = (e: any) => {

@@ -199,3 +199,8 @@ To host the site with Firebase Hosting, we need the Firebase CLI
 ### n-level Nested Comments
 
 - Displayed n-level nested comments using dummy data
+
+### Live Chat
+
+- Implemented live chat using Long/API polling
+- Optimize the chat messages when it reaches to a certion limit/threshold
