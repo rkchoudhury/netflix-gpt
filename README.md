@@ -1,6 +1,6 @@
 # Netflix GPT
 
-- Hosted at: https://netflixgpt-c1dd2.web.app
+https://github.com/user-attachments/assets/232ae359-eca8-46c6-991f-2208fa56eb89
 
 ## Commands used in set up the projects
 
